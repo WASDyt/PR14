@@ -9,9 +9,9 @@ leng = leng.ToLower();
 string res = @"Input.txt";
 StreamReader sr = new StreamReader(res);
 string r = sr.ReadToEnd();
-bool result = Regex.IsMatch(r, leng);
+bool Result = Regex.IsMatch(r, leng);
 Console.WriteLine($"Поиск слова {leng}");
-if (result)
+if (Result)
 {
     String[] words = r.Split(new char[] { ' ', ',' });
 
@@ -26,3 +26,7 @@ else
 {
     Console.WriteLine("Совпадений нет");
 }
+string path1 = @"Result.txt";
+StreamWriter sw1 = new StreamWriter(path1, false);
+sw1.WriteLine(leng);
+sw1.Close();
